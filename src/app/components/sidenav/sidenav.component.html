@@ -1,0 +1,21 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+    <div class="logo-container">
+        <button class="logo" (click)="collapseNav()">MF</button>
+        <div class="logo-text" *ngIf="!collapsed">MyFinance</div>
+        <button *ngIf="!collapsed" class="close" (click)="collapseNav()">
+            <app-icon name="mdiWindowClose"></app-icon>
+        </button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" (click)="goToPage(data.url)">
+                <div class="link-container d-flex justify-content-between align-items-center">
+                    <div class="link-icon">
+                        <app-icon [name]="data.iconName"></app-icon>
+                    </div>
+                    <span class="sidenav-link-text" *ngIf="!collapsed">{{data.label}}</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

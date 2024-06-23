@@ -1,0 +1,133 @@
+.sidenav {
+    background: #263238;
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 16.5625rem;
+    height: 100vh;
+    box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+
+    .logo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.938rem 0.938rem 0 0.938rem;
+        width: 100%;
+
+        .logo {
+            background: #fff;
+            text-align: center;
+            width: 3rem;
+            min-width: 3rem;
+            height: 3rem;
+            border-radius: 0.625rem;
+            padding: 0.313rem;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            color: #263238;
+            transition: all 0.5s ease;
+        }
+
+        .logo:hover{
+            background-color: rgba(0, 88, 221, 0.877);
+            border-radius: 50%;
+            color: #f3f3f3;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            transition: all 0.5s ease;
+            text-transform: uppercase;
+        }
+
+        .close {
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+            transition: all 0.5s ease;
+
+            app-icon {
+                color: #ffff;
+                font-size: 1rem;
+                transition: all 0.5s ease;
+            }
+        }
+
+        .close:hover {
+            background-color: #fff;
+
+            app-icon {
+                color: #263238;
+            }
+        }
+    }
+}
+
+.sidenav-collapsed {
+    width: 5rem;
+}
+
+.sidenav-nav {
+    list-style: none;
+    padding: 0.938rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    cursor: pointer;
+
+    .sidenav-nav-item {
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        .sidenav-nav-link {
+            display: flex;
+            height: 3rem;
+            color: #f3f3f3;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+            gap: 12px;
+        }
+
+        .sidenav-link-icon {
+            font-size: 22px;
+            width: 2rem;
+            min-width: 2rem;
+            margin-bottom: 0 0.5rem;
+            text-align: center;
+        }
+    }
+
+    .sidenav-nav-item:hover {
+        .sidenav-nav-link {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+    .sidenav-link-text {
+        height: 50px;
+        font-size: 25px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
