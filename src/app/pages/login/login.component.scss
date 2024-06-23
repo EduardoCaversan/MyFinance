@@ -28,12 +28,12 @@
 }
 
 .login-card {
-    width: 490px;
-    height: 554px;
-    border-radius: 30px;
+    height: 100vh;
     background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-        -15px -15px 30px rgb(60, 60, 60);
+
+    .content {
+        margin-top: 4rem;
+    }
 }
 
 .header {
@@ -94,7 +94,9 @@
     position: absolute;
     top: 100%;
     backface-visibility: hidden;
-    padding: 25px 45px;
+    width: 380px;
+    height: max-content;
+    padding: 40px 40px;
     border-radius: 15px;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 1),
         inset -1px -1px 5px rgba(255, 255, 255, 0.6);
@@ -170,8 +172,9 @@
 }
 
 .form .switch {
-    font-size: 11px;
+    font-size: 15px;
     color: white;
+    width: max-content;
 }
 
 .form .switch .signup_tog {
@@ -190,8 +193,7 @@
 }
 
 .incomplete-form {
-    box-shadow: 6px 6px 10px rgb(255, 0, 0),
-        1px 1px 10px rgba(255, 63, 63, 0.6);
+    border: 1px solid rgba(255, 0, 0, 0.584);
 }
 
 .my-finance {
@@ -201,4 +203,26 @@
 
 .my-finance:hover {
     color: rgba(0, 88, 221, 0.877);
+}
+
+.error-message {
+    color: red;
+    margin-left: 3rem;
+    margin-top: 5px;
+}
+
+.see-password {
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    border-radius: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.top-distance {
+    top: 50%;
 }
