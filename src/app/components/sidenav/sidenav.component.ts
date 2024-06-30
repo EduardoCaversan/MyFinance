@@ -20,7 +20,7 @@ interface INavData {
 export class SidenavComponent implements OnInit {
   public collapsed: boolean = true;
   public navData: INavData[] = [
-    { label: 'Início', iconName: 'mdiHome', url: '' },
+    { label: 'Início', iconName: 'mdiHome', url: 'home' },
     { label: 'Dashboard', iconName: 'mdiFinance', url: 'dashboard' },
     { label: 'Movimentações', iconName: 'mdiWallet', url: 'movimentacoes' },
     { label: 'Sair', iconName: 'mdiLocationExit', url: 'logout' },
