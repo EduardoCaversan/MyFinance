@@ -22,8 +22,7 @@ export class SidenavComponent implements OnInit {
   public navData: INavData[] = [
     { label: 'Início', iconName: 'mdiHome', url: '' },
     { label: 'Dashboard', iconName: 'mdiFinance', url: 'dashboard' },
-    { label: 'Entradas', iconName: 'mdiArrowUpCircle', url: 'entradas' },
-    { label: 'Saídas', iconName: 'mdiArrowDownCircle', url: 'saidas' },
+    { label: 'Movimentações', iconName: 'mdiWallet', url: 'movimentacoes' },
     { label: 'Sair', iconName: 'mdiLocationExit', url: 'logout' },
   ];
 

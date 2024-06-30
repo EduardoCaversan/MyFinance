@@ -12,8 +12,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 6.5px;
         padding: 0.938rem 0.938rem 0 0.938rem;
-        width: 100%;
+        width: max-content;
 
         .logo {
             background: #fff;
@@ -31,7 +32,7 @@
             transition: all 0.5s ease;
         }
 
-        .logo:hover{
+        .logo:hover {
             background-color: rgba(0, 88, 221, 0.877);
             border-radius: 50%;
             color: #f3f3f3;
@@ -41,18 +42,27 @@
             font-size: 24px;
             font-weight: 700;
             color: #fff;
-            transition: all 0.5s ease;
             text-transform: uppercase;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .collapsed-close-logo-text {
+            width: 0px;
+        }
+
+        .not-collapsed-close-logo-text {
+            width: 142px;
         }
 
         .close {
             cursor: pointer;
-            width: 2rem;
             height: 2rem;
             border-radius: 50%;
             background-color: transparent;
             border: none;
             transition: all 0.5s ease;
+            overflow: hidden;
 
             app-icon {
                 color: #ffff;
@@ -67,6 +77,14 @@
             app-icon {
                 color: #263238;
             }
+        }
+
+        .collapsed-close-btn {
+            width: 0px;
+        }
+
+        .not-collapsed-close-btn {
+            width: 2rem;
         }
     }
 }
@@ -121,6 +139,8 @@
         font-weight: 500;
         display: flex;
         align-items: center;
+        transition: width 0.5s ease;
+        overflow: hidden;
     }
 }
 
@@ -130,4 +150,12 @@
     justify-content: center;
     width: 50px;
     height: 50px;
+}
+
+.collapsed-nav {
+    width: 0px;
+}
+
+.not-collapsed-nav {
+    width: 199px;
 }

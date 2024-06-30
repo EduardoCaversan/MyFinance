@@ -1,8 +1,8 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
     <div class="logo-container">
         <button class="logo" (click)="collapseNav()">MF</button>
-        <div class="logo-text" *ngIf="!collapsed">MyFinance</div>
-        <button *ngIf="!collapsed" class="close" (click)="collapseNav()">
+        <div class="logo-text" [ngClass]="{'not-collapsed-close-logo-text': !collapsed, 'collapsed-close-logo-text': collapsed}">MyFinance</div>
+        <button [ngClass]="{'not-collapsed-close-btn': !collapsed, 'collapsed-close-btn': collapsed}" class="close" (click)="collapseNav()">
             <app-icon name="mdiWindowClose"></app-icon>
         </button>
     </div>
@@ -13,7 +13,7 @@
                     <div class="link-icon">
                         <app-icon [name]="data.iconName"></app-icon>
                     </div>
-                    <span class="sidenav-link-text" *ngIf="!collapsed">{{data.label}}</span>
+                    <span class="sidenav-link-text" [ngClass]="{'not-collapsed-nav': !collapsed, 'collapsed-nav': collapsed}">{{data.label}}</span>
                 </div>
             </a>
         </li>
