@@ -1,0 +1,9 @@
+<div class="chip" [ngClass]="{'entry': chipType === 'entry','exit': chipType === 'exit','balance': chipType === 'balance'}">
+    <div class="chip-icon d-flex justify-content-start align-items-center h-100">
+        <app-icon [name]="chipIconName"></app-icon>
+    </div>
+    <div class="chip-text w-100 mx-3 d-flex flex-column">
+        <span>{{chipText}}</span>
+        <span>{{formattedValue}}</span>
+    </div>
+</div>

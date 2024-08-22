@@ -1,0 +1,32 @@
+.chip {
+    height: 100px;
+    max-width: 100%;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.entry {
+    background-color: #00BFA6;
+}
+
+.exit {
+    background-color: rgb(220, 22, 22);
+}
+
+.balance {
+    background-color: rgb(0,140,255);
+}
+
+.chip-icon {
+    font-size: 28px;
+    margin-left: 12px;
+}
+
+.chip-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
