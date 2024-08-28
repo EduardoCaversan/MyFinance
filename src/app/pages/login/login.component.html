@@ -5,7 +5,7 @@
                 <div class="logo mb-4">
                     <span>MF</span>
                 </div>
-                <h1>Bem vindo(a) ao <span class="my-finance">MyFinance</span></h1>
+                <h1>Bem vindo(a) ao MyFinance</h1>
             </div>
             <div class="form-container" [formGroup]="loginForm">
                 <input type="checkbox" id="signup_toggle">
@@ -17,10 +17,11 @@
                             <input placeholder="Usuário"
                                 [ngClass]="{'incomplete-form': isControlInvalid(loginForm.controls['username'])}"
                                 autocomplete="username" class="input" type="text" formControlName="username">
+                            @if (isControlInvalid(loginForm.controls['username'], 'required')) {
                             <div class="col-12 p-0 d-flex justify-content-start align-items-center error-message">
-                                <span *ngIf="isControlInvalid(loginForm.controls['username'], 'required')">* Preencha o
-                                    usuário</span>
+                                <span>* Campo obrigatório</span>
                             </div>
+                            }
                         </div>
                         <div
                             class="col-12 p-0 flex-column justify-content-center align-items-center d-flex position-relative">
@@ -33,15 +34,16 @@
                                 [ngClass]="{'incomplete-form': isControlInvalid(loginForm.controls['password'])}"
                                 autocomplete="current-password" class="input"
                                 [type]="canSeePassword ? 'text' :'password'" formControlName="password">
-                            <div class="col-12 p-0 d-flex justify-content-start align-items-center error-message"
-                                *ngIf="isControlInvalid(loginForm.controls['password'], 'required')">
-                                <span>* Preencha a senha</span>
+                            @if (isControlInvalid(loginForm.controls['password'], 'required')) {
+                            <div class="col-12 p-0 d-flex justify-content-start align-items-center error-message">
+                                <span>* Campo obrigatório</span>
                             </div>
-                            <div class="col-12 p-0 d-flex justify-content-start align-items-center error-message"
-                                *ngIf="isControlInvalid(loginForm.controls['password'], 'minlength')">
-                                <span>* A senha deve
-                                    ter pelo menos 8 dígitos</span>
+                            }
+                            @else if (isControlInvalid(loginForm.controls['password'], 'minlength')) {
+                            <div class="col-12 p-0 d-flex justify-content-start align-items-center error-message">
+                                <span>* A senha é muito curta</span>
                             </div>
+                            }
                         </div>
                         <button class="btn" (click)="onLoginRequest()">Entrar</button>
                         <span class="switch">Ainda não possui uma conta?

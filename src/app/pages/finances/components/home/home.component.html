@@ -28,17 +28,7 @@
             <h4>Suas principais movimentações neste mês</h4>
         </div>
         <div class="col-12">
-            <app-datagrid [columns]="['First', 'Last']" [rows]="[
-            { First: 'Mark', Last: 'Otto' },
-            { First: 'Robbie', Last: 'Williams' },
-            { First: 'Robert', Last: 'Downey' },
-            { First: 'Bruce', Last: 'Wayne' },
-            { First: 'Jacob', Last: 'Thornton' },
-            { First: 'Clark', Last: 'Kent' },
-            { First: 'The Kind', Last: 'One' },
-            { First: 'Darius', Last: 'Noxus' },
-            { First: 'Garen', Last: 'Demacia' },
-            { First: 'Larry', Last: 'the Bird' }]">
+            <app-datagrid [columns]="columns" [rows]="rows">
             </app-datagrid>
         </div>
     </div>
