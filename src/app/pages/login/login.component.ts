@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoadingService } from '../../shared/services/loading.service';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import { AuthService } from '../../shared/services/auth.service';
+import { IconComponent } from '../../shared/components/icon/icon.component';
 
 interface IUserInfo {
   username: string | null;
@@ -14,7 +15,7 @@ interface IUserInfo {
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, LoadingComponent],
+  imports: [CommonModule, ReactiveFormsModule, LoadingComponent, IconComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl(null, [Validators.required, Validators.minLength(8)])
   });
   public userInfo!: IUserInfo;
-
+  public canSeePassword: boolean = false;
   constructor(
     private router: Router,
     private loading: LoadingService,
@@ -57,5 +58,18 @@ export class LoginComponent implements OnInit {
       this.loading.hide();
       clearTimeout(timeout);
     }, 6000);
+  }
+
+  public toggleCanSeePassword(): void {
+    this.canSeePassword = !this.canSeePassword;
+  }
+
+  public isControlInvalid(control: AbstractControl, validatorName?: string): boolean {
+    if (control.touched && control.invalid) {
+      if (validatorName && control.errors)
+        return control.errors[validatorName] !== undefined;
+      return true;
+    }
+    return false;
   }
 }

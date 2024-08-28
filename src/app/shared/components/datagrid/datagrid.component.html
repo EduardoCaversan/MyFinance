@@ -1,0 +1,21 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th *ngFor="let column of columns" scope="col" (click)="toggleSort(column.field)">
+                    <div class="d-flex justify-content-between align-items-center flex-row">
+                        <span>{{ column.header }}</span>
+                        <app-icon [name]="getSortIcon(column.field)" size="lg"></app-icon>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let row of rows; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td *ngFor="let column of columns">{{ !!column.isCurrency ? getCurrencyString(row[column.field]) : row[column.field] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

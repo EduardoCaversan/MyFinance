@@ -1,0 +1,35 @@
+<div class="row g-0 py-3 px-5">
+    <div class="col-12">
+        <h3>Bem vindo ao MyFinance!</h3>
+    </div>
+    <div class="col-12">
+        <h4>Acompanhe um resumo de suas movimentações e dados relevantes sobre seu financeiro.</h4>
+    </div>
+</div>
+<div class="row g-0 px-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="col">
+            <app-movements-card [chipType]="'entry'" [valueToBeShown]="150">
+            </app-movements-card>
+        </div>
+        <div class="col mx-4">
+            <app-movements-card [chipType]="'exit'" [valueToBeShown]="-50">
+            </app-movements-card>
+        </div>
+        <div class="col">
+            <app-movements-card [chipType]="'balance'" [valueToBeShown]="100">
+            </app-movements-card>
+        </div>
+    </div>
+</div>
+<div class="m-auto px-5 mt-3">
+    <div class="row g-0">
+        <div class="col-12">
+            <h4>Suas principais movimentações neste mês</h4>
+        </div>
+        <div class="col-12">
+            <app-datagrid [columns]="columns" [rows]="rows">
+            </app-datagrid>
+        </div>
+    </div>
+</div>
